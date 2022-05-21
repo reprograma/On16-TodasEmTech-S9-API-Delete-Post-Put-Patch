@@ -8,8 +8,8 @@
 - **Criar** o arquivo **```.gitignore```** dentro da pasta **```para-a-sala```** e inserir a informação : **```node_modules```**
 - **Dentro** de **```para-a-sala/src``` criar** as seguintes pastas : 
 
-**```controller```**
-**```routes```**
+1. **```controller```**
+2. **```routes```**
 
 ---
 # 📍 **VS CODE : Ir no arquivo ```app.js``` dentro da pasta ```para-a-sala/src``` :**
@@ -194,33 +194,22 @@ module.exports = router
 ---
 # 📍 **POSTMAN**
 
-✔️ **Buscar o catálogo de filmes**
+### ✔️ **Buscar o catálogo de filmes**
+- **GET:** localhost:1313/filmes/catalogo
+- **SEND**
 
-**GET:** localhost:1313/filmes/catalogo
+### ✔️ **Alterar o título pelo ID do filme**
+- **PATCH:** localhost:1313/filmes/:id 
+- *TROCAR **:id** pelo id desejado*
+- *Ir em : **Body -> raw -> Json** e digitar a info abaixo :*
+- { "title" : ```"INSERIRNOVOTITULO"``` }
+- **SEND**
 
-**SEND**
-
-✔️ **Alterar o título pelo ID do filme**
-
-**PATCH:** localhost:1313/filmes/:id 
-
-*TROCAR **:id** pelo id desejado*
-
-*Ir em : **Body -> raw -> Json** e digitar a info abaixo :*
-
-{ "title" : ```"INSERIRNOVOTITULO"``` }
-
-**SEND**
-
-✔️ **Modificar TODO o body**
-
-**PUT:** localhost:1313/filmes/change/:id 
-
-*TROCAR **:id** pelo id desejado*
-
-*Ir em : **Body -> raw -> Json** e digitar a info abaixo :*
-
-{ inserir todo o body com as alterações desejadas}
+### ✔️ **Modificar TODO o body**
+- **PUT:** localhost:1313/filmes/change/:id 
+- *TROCAR **:id** pelo id desejado*
+- *Ir em : **Body -> raw -> Json** e digitar a info abaixo :*
+- { inserir todo o body com as alterações desejadas}
 
 ```
 exemplo : {	
@@ -231,24 +220,17 @@ exemplo : {
       }
 ```
 
-⚠️ **COLOCAR TODAS AS INFORMAÇÕES DO BODY, INCLUSIVE O ID (mas NÃO alterar o ID)** - ️*Ao fazer essa mudança, os itens do antigo body que não estiverem no novo body, serão deletados*
+- ⚠️ **COLOCAR TODAS AS INFORMAÇÕES DO BODY, INCLUSIVE O ID (mas NÃO alterar o ID)** - ️*Ao fazer essa mudança, os itens do antigo body que não estiverem no novo body, serão deletados*
+- **SEND**
 
-**SEND**
+### ✔️ **Deleta o filme por título** - *(coloquei antes da busca por id para não ter conflito de rota)*
 
-✔️ **Deleta o filme por título** - *(coloquei antes da busca por id para não ter conflito de rota)*
+- **DELETE:** localhost:1313/filmes/delete/titulo 
+- *Digitar no **FINAL da rota** acima:* ```?title=TITULODOFILMEDESEJADO```
+- ***TROCAR**  ```TITULODOFILMEDESEJADO``` pelo titulo do filme que você quer deletar*
+- **SEND**
 
-**DELETE:** localhost:1313/filmes/delete/titulo 
-
-*Digitar no **FINAL da rota** acima:* ```?title=TITULODOFILMEDESEJADO```
-
-***TROCAR**  ```TITULODOFILMEDESEJADO``` pelo titulo do filme que você quer deletar*
-
-**SEND**
-
-✔️ **Deleta o filme por ID**
-
-**DELETE:** localhost:1313/filmes/delete/:id 
-
-na rota *TROCAR **:id** pelo id do filme que quer deletar*
-
-**SEND**
+### ✔️ **Deleta o filme por ID**
+- **DELETE:** localhost:1313/filmes/delete/:id 
+- na rota *TROCAR **:id** pelo id do filme que quer deletar*
+- **SEND**
