@@ -235,4 +235,4 @@ exemplo : {
 - **SEND**
 
 
-Resuminho lindo que nossa querida [May](https://github.com/Maysafig/On16-TodasEmTech-S9-API-Delete-Post-Put-Patch/edit/semana9/README.md) criou.
+Resuminho lindo que nossa querida [May](https://github.com/Maysafig) criou.
