@@ -79,10 +79,10 @@ const deleteFilme = (request, response) => {
 
     const deleteFilmePorTitulo = (request, response)=>{
         //id que quero deletar
-        const idRequest = request.params.title
+        const idRequest = request.params.title.toLowerCase()
     
         //pegando o indice(index) da tarefa q vai ser deletada
-        const indiceFilme = filmesJson.findIndex(filme => filme.title == idRequest)
+        const indiceFilme = filmesJson.findIndex(filme => filme.title.toLowerCase() == idRequest)
     
         //retira a tarefa da array de tarefas a partir do seu indice
         //ARRAY.SPLICE(INDICE, NUMERO DE ITENS DELETADOS, ITEM A SER ADICIONADO)
