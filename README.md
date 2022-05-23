@@ -139,9 +139,9 @@ const deleteFilme = (request, response ) => {
 const deleteFilmePorTitulo = (request, response ) => {
 
     //titulo que quero deletar
-    const titleRequest = request.query.title.toLowerCase()
+    const titleRequest = request.params.title.toLowerCase()
 
-    const indexTitle = filmesJson.findIndex( filme => filme.title == titleRequest)
+    const indexTitle = filmesJson.findIndex( filme => filme.title.toLowerCase() == titleRequest)
 
     filmesJson.splice(indexTitle,1)
 
@@ -185,7 +185,7 @@ const router = express.Router()
 router.get("/catalogo", controller.getAll)
 router.patch("/update/:id", controller.updateTitle)
 router.put("/change/:id", controller.updateMovie)
-router.delete("/delete/titulo", controller.deleteFilmePorTitulo) //coloquei essa rota de delete antes da delete/:id para não dar conflito 
+router.delete("/delete/title/:title", controller.deleteFilmePorTitulo) //coloquei essa rota de delete antes da delete/:id + subrota 'title' para não dar conflito 
 router.delete("/delete/:id", controller.deleteFilme)
 
 //exportando para ser usado no app.js
@@ -225,9 +225,8 @@ exemplo : {
 
 ### ✔️ **Deleta o filme por título** - *(coloquei antes da busca por id para não ter conflito de rota)*
 
-- **DELETE:** localhost:1313/filmes/delete/titulo 
-- *Digitar no **FINAL da rota** acima:* ```?title=TITULODOFILMEDESEJADO```
-- ***TROCAR**  ```TITULODOFILMEDESEJADO``` pelo titulo do filme que você quer deletar*
+- **DELETE:** localhost:1313/filmes/delete/title/titulo%20do%20meu%20filme
+- ***TROCAR**  ```titulo%20do%20meu%20filme``` pelo titulo do filme que você quer deletar, lembrando que o %20 simboliza os espaços*
 - **SEND**
 
 ### ✔️ **Deleta o filme por ID**
