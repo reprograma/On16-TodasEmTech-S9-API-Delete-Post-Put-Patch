@@ -1,18 +1,27 @@
 {
-    "name": "reprograma-put-patch-delete",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "nodemon server.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "cors": "^2.8.5",
-      "express": "^4.17.1",
-      "nodemon": "^2.0.13"
-    }
-  }
+  "name": "reprograma-put-patch-delete",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Marina Porto",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninaportoc/On16-TodasEmTech-S9-API-Delete-Post-Put-Patch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ninaportoc/On16-TodasEmTech-S9-API-Delete-Post-Put-Patch/issues"
+  },
+  "homepage": "https://github.com/ninaportoc/On16-TodasEmTech-S9-API-Delete-Post-Put-Patch#readme",
+  "description": ""
+}
