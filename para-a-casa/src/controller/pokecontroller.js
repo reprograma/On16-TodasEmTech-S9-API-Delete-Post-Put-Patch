@@ -55,9 +55,12 @@ const deletePokemon = (request, response) => {
 // verificar como deleta o tipo
 const deleteTipo = (request, response) =>{
     const tipoRequest = request.query.type
-    const indicePokemon = pokeJson.filter(poke => poke.type == tipoRequest)
+    const buscaTipo = pokeJson.filter(poke => poke.type == tipoRequest)
 
-    pokeJson.splice(indicePokemon, 1)
+    for (let indice = 0; indice < pokeJson.length; indice ++) {
+        const indicePokemon = pokeJson.indexOf(buscaTipo[indice]);
+        pokeJson.splice(indicePokemon, 1)
+    }
 
     response.status(200).json([{
         "message": "Tipo de Pokemon deletado",
