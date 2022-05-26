@@ -17,12 +17,13 @@ const updateAll = (request, response) => {
     const idRequest = request.params.id
     let alteraPokemon = request.body
 
-    pokemonFiltrado = pokeJson.find(poke => poke.id == idRequest)
-    pokemonFiltrado = alteraPokemon
+    let pokemonFiltrado = pokeJson.findIndex(poke => poke.id == idRequest)
+    pokeJson.splice(pokemonFiltrado, 1, alteraPokemon)
 
     response.status(200).json([{
         "message": "Todas as informações do seu pokemon foram alteradas",
-        pokemonFiltrado
+        "alterado": idRequest,
+        pokeJson
     }])
 }
 
@@ -35,7 +36,8 @@ const updateStats = (request, response) =>{
 
     response.status(200).json([{
         "message": "O stats do seu Pokemon foi alterado",
-        pokemonFiltrado
+        "alterado": idRequest,
+        pokeJson
     }])
 }
 
