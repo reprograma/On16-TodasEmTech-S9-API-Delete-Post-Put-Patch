@@ -85,42 +85,35 @@ const deletaFilmePorId = (request, response) => {
 }
 
 // Aplicando lógica da rota 4 [DELETE]: Uma rota que seja possível excluir filmes por diretor (director)
-// [OBS]: ainda em dúvida nessa rota
 
-const deletaFilmePorDiretor = (request, response) => {
-    //id que quero deletar
-    const idRequest = request.params.director.toLowerCase()
+const deleteFilmePorDiretor = (request, response) => {
 
-    //pegando o indice(index) da tarefa q vai ser deletada
-    const indiceFilme = filmesJson.findIndex(filme => filme.director.toLowerCase() == idRequest)
+    const directorRequest = request.query.director // Uso do query para quando o retorno vai ser mais de apenas um, como no caso do ID
 
-    //retira a tarefa da array de tarefas a partir do seu indice
-    //ARRAY.SPLICE(INDICE, NUMERO DE ITENS DELETADOS, ITEM A SER ADICIONADO)
-    //quando splice a gente so coloca o indice e 1, estamo retirando somente o tem
-    filmesJson.splice(indiceFilme, 1)
+    const diretoresFiltrados = filmesJson.filter(filme => filme.director.includes(directorRequest));
+
+    // Estrutura for para percorrer todo array
+    for (indice = 0; indice < diretoresFiltrados.length; indice++) {
+        console.log(indice, filmesJson[indice])
+
+        const index = filmesJson.indexOf(diretoresFiltrados[indice]);
+        filmesJson.splice(index, 1);
+    }
 
     response.status(200).json([{
-        "message": "Filme deletado com sucesso",
-        "director": idRequest,
+        "message": "Filmes deletados com sucesso",
+        "deletado": directorRequest,
         filmesJson
     }])
+
 }
 
-//const deletaFilmePorDiretor = (request, response) => {
-//    const diretorRequest = request.query.director.toLowerCase()
-//    const indiceFilmesEncontrados = filmesJson.filter(filme => filme.director.toLowerCase().includes(diretorRequest) == diretorRequest)
-//    filmesJson.splice(indiceFilmesEncontrados, 1)
-//    response.status(200).json([{
-//        "message": "Filme deletado com sucesso!",
-//        "deletada": diretorRequest,
-//        filmesJson
-//    }])
-//}
+
 
 module.exports = {
     getListarTudo,
     alterarTodosDados,
     alterarDuracao,
     deletaFilmePorId,
-    deletaFilmePorDiretor
+    deleteFilmePorDiretor
 }

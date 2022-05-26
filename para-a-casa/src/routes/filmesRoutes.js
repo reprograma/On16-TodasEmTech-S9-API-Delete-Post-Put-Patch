@@ -12,7 +12,7 @@ router.get("/catalogoGhibli", controller.getListarTudo)
 router.put("/atualizarTodosDados/:id", controller.alterarTodosDados)
 router.patch("/atualizarDuracao/:id", controller.alterarDuracao)
 router.delete("/deleteId/:id", controller.deletaFilmePorId)
-router.delete("/deleteDirector/:director", controller.deletaFilmePorDiretor)   // ainda em dúvida
+router.delete("/delete/director", controller.deleteFilmePorDiretor)
 
 // exportando para ser usado no app.js
 module.exports = router
