@@ -52,10 +52,9 @@ const deletePokemon = (request, response) => {
     }])
 }
 
-// verificar como deleta o tipo
-const deleteTipo = (request, response) =>{
+const deleteTipo = (request, response) => {
     const tipoRequest = request.query.type
-    const buscaTipo = pokeJson.filter(poke => poke.type == tipoRequest)
+    const buscaTipo = pokeJson.filter(poke => poke.type.includes(tipoRequest))
 
     for (let indice = 0; indice < pokeJson.length; indice ++) {
         const indicePokemon = pokeJson.indexOf(buscaTipo[indice]);
