@@ -1,7 +1,7 @@
 //AS ROTAS E METODOS DE FILMES
 
 //chamar o controller de filmes
-const controller = require('../controller/filmeController')
+const controller = require('../controller/movieController')
 
 //chamando o express
 const express = require('express') 

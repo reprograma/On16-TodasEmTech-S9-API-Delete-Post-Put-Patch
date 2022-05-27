@@ -2,7 +2,7 @@
 const express = require('express') //importando o express
 
 //importe da continuação das rotas de filmes
-const filmesRoutes = require("./routes/filmeRoutes")
+const filmesRoutes = require("./routes/movieRoutes")
 
 //executo o express
 const app = express() 
