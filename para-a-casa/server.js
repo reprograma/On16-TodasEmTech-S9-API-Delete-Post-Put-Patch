@@ -1,0 +1,7 @@
+const app = require('./src/app')
+
+const PORT = 1313
+
+app.listen(PORT,()=>{
+    console.log("ola estou na porta 1313")
+})
