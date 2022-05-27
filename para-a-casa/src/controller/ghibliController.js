@@ -26,7 +26,8 @@ const alteraQuaseTudo = (request, response) => {
     ])
    }
 
-   //May, nesta próxima const eu nao consegui entender o motivo de nao conseguir modificar no postman, fiquei pendente. Desculpa :/ 
+   //May, nesta próxima const eu nao consegui entender 
+  // o motivo de nao conseguir modificar no postman, fiquei pendente. Desculpa :/ 
 const alteraDuracao = (request, response) => {
     const idRequest = request.params.id
     let duracaoModificada = request.body.running_time
