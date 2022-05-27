@@ -1,22 +1,23 @@
 // AS ROTAS E METODOS DE FILMES
 
-// chamar o controller de filmes
-const controller = require('../controller/filmeController')
+// chama o controller de filmes
 
-const express = require('express') // chamando express
-const { Router } = require('express')
+const controller = require("../controller/filmeController");
 
-// funcao de rotas do express
-const router = express.Router()
+const express = require("express");
 
-// router. metodo http (rota, funcao)
+// função de rotas do express
+const router = express.Router();
 
-router.get("/catalogo", controller.getAll)
-router.patch("/update/:id", controller.updateTitle)
-router.put("/change/:id", controller.updateMovie)
-router.delete("/delete/:id", controller.deleteFilme)
-router.delete("/delete/title/:title", controller.deleteFilmePorTitulo)
+// router. método http (rota, funcao)
 
-//exportando para ser usado no app.js
-module.exports = router
+router.get("/catalogo", controller.getAll);
 
+router.patch("/update/:id", controller.updateTitle);
+
+router.put("/change/:id", controller.updateMovie);
+
+router.delete("/delete/:id", controller.deleteFilme);
+
+// exporta para ser usado no app.js
+module.exports = router;
