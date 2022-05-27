@@ -1,16 +1,17 @@
-// centralizando o conteudo da aplicacao
+//centralizando o conteúdo da aplicação
 // rota raiz
-const express = require("express") //importando o express
 
-//importe da continuacao das rotas de filmes
-const filmesRoutes = require("./routes/filmeRoutes")
+const express = require('express') //importando o express
 
-const app = express() // executo o express
+const filmesRoutes = require('./routes/filmeRoutes') //import da continuação das rotas de filmes
 
-app.use(express.json()) // uso o bodyparser
+const app = express() //executo o express
 
-// criar uma rota raiz
-app.use("/filmes", filmesRoutes)
+app.use(express.json()) //executando o bodyparser
 
-// exportando para usar o server.js
-module.exports = app
+//criar uma rota raiz
+app.use('/filmes', filmesRoutes)
+
+module.exports = app //exportando para usar o server.js
+
+
