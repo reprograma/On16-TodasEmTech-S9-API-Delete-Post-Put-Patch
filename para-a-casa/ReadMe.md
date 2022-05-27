@@ -5,7 +5,7 @@ Essa semana continuamos estudando **CRUD e HTTP**, mas nos aprofundamos mais em 
 Fizemos muitos exercícios em sala e tivemos um desafio para casa que me deixou doida.
 Nesta semana passei muito estresse com o postman e reli meus códigos mais ou menos 98 mil vezes, mas consegui entregar a tarefa! Para mim, o mais difícil foi conseguir deletar o filme pelo diretor. Passei mais de um dia tentando fazer funcionar até que uma hora simplesmente foi. Não é mágica, mas às vezes bem parece, viu?
 
-![Voador]("C:\Users\clara\Desktop\Reprograma\On16-TodasEmTech-S9-API-Delete-Post-Put-Patch\para-a-casa\nos-que-voa.gif")
+![Voador](https://24.media.tumblr.com/2188dbbbc7f4b782464627332e7620c5/tumblr_mi2o3nppVV1rmae3so2_250.gif)
 
 ## O que aprendi a duras penas
 
@@ -14,7 +14,7 @@ Servem para atualizar dados em um model, mas são **diferentes**. Fique atenta, 
 
 O **PUT** substituí TODOS os OBJETOS que queremos mudar de UMA VEZ SÓ. Já o **PATCH** só faz uma correção em uma única propriedade (pensa que patch em inglês significa REMENDO. Ou seja, você tá só dando uma ajeitadinha ali num desfiado, não tá mexendo em toda estrutura).
 
-![Remendo]("C:\Users\clara\Desktop\Reprograma\On16-TodasEmTech-S9-API-Delete-Post-Put-Patch\para-a-casa\remendo.jpg")
+![Remendo](https://s.dicio.com.br/remendo.jpg)
 
 > DELETE
 Por sua vez, o **DELETE** é usado para removere um recurso ou uma coleção deles. É tchau, tchau. Tem que usar com cautela, mas é uma deli.
