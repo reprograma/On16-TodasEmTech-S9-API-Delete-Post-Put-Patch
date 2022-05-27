@@ -38,7 +38,7 @@ const updateMovie = (request,response) => {
         ghiblifilmsJson
     }])
 }
-const deleteFilmePorId = (request,response) => {
+const deleteFilme = (request,response) => {
     const titleRequest = request.params.title.toLowerCase()
     const indexTitle = ghiblifilmsJson.findIndex(filme=>filme.title.toLowerCase()==titleRequest)
     ghiblifilmsJson.splice(indexTitle,1)
@@ -49,10 +49,21 @@ const deleteFilmePorId = (request,response) => {
     }])
 }
 
+const deleteFilmePorId = (request,response)=>{
+    const idRequest = request.params.id
+    const indexFilme = ghiblifilmsJson.findIndex(filme=>filme.id==idRequest)
+    ghiblifilmsJson.splice(indexFilme,1)
+    response.status (200).json([{
+        "mensagem":"o filme foi deletado",
+        "delete":idRequest
+    }])
+}
+
 module.exports = {
     getAll,
     updateTitle,
     updateMovie,
+    deleteFilme,
     deleteFilmePorId
 
 }
