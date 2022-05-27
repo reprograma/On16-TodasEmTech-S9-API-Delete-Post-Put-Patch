@@ -26,10 +26,10 @@ const alteraQuaseTudo = (request, response) => {
     ])
    }
 
+   //May, nesta próxima const eu nao consegui entender o motivo de nao conseguir modificar no postman, fiquei pendente. Desculpa :/ 
 const alteraDuracao = (request, response) => {
     const idRequest = request.params.id
     let duracaoModificada = request.body.running_time
-
     filmeFiltrado = ghibliFilmes.find(filme => filme.id == idRequest)
     filmeFiltrado.running_time = duracaoModificada
     response.status(200).json([
