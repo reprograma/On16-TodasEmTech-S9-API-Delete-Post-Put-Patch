@@ -12,14 +12,14 @@ const pokedex = (request, response) => {
   ]);
 };
 
-// ALTERAR TODOS OS DADOS DE UM POKEMON (MENOS ID) - put
+// TO CHANGE ALL DATA OF A POKEMON (EXCEPT ID) - put
 
 const updatePokemon = (request, response) => {
   const idRequest = request.params.id;
   const pokemonRequest = request.body;
 
   const foundIndex = pokemonJson.findIndex(
-    (pokemon) => pokemon.id == idRequest
+    (pokemon) => pokemon.id === parseInt(idRequest)
   );
 
   pokemonJson.splice(foundIndex, 1, pokemonRequest);
@@ -32,13 +32,27 @@ const updatePokemon = (request, response) => {
   ]);
 };
 
-// ALTERAR STATS DE UM POKEMON - patch
+/** 
+const newPokeJson = pokemonJson.map((pokemon) => {
+    if (pokemon.id === idRequest) {
+      return {
+        ...pokemon,
+        ...pokemonRequest,
+      };
+    }
+    return pokemon;
+  });
+*/
+
+// TO CHANGE POKEMON'S STATS - patch
 
 const updateStats = (request, response) => {
   const idRequest = request.params.id;
   const newStats = request.body.stats;
 
-  const filteredPokemon = pokemonJson.find((pokemon) => pokemon.id == idRequest);
+  const filteredPokemon = pokemonJson.find(
+    (pokemon) => pokemon.id === parseInt(idRequest)
+  );
   filteredPokemon.stats = newStats;
 
   response.status(200).json([
@@ -49,13 +63,13 @@ const updateStats = (request, response) => {
   ]);
 };
 
-// EXCLUIR POKEMON POR ID - delete
+// DELETE POKEMON BY ID - delete
 
 const deletePokemonId = (request, response) => {
   const idRequest = request.params.id;
 
   const foundIndex = pokemonJson.findIndex(
-    (pokemon) => pokemon.id == idRequest
+    (pokemon) => pokemon.id === parseInt(idRequest)
   );
 
   pokemonJson.splice(foundIndex, 1);
@@ -69,7 +83,7 @@ const deletePokemonId = (request, response) => {
   ]);
 };
 
-// EXCLUIR POKEMON POR TIPO - delete (exclui apenas pokemons com um único tipo)
+// DELETE POKEMON BY TYPE - delete
 
 const deletePokemonType = (request, response) => {
   const typeRequest = request.query.type;
@@ -93,6 +107,10 @@ const deletePokemonType = (request, response) => {
     },
   ]);
 };
+
+/**
+const updatedJson = pokemonJson.filter(pokemon => !pokemon.type.includes(typeRequest));
+*/
 
 module.exports = {
   pokedex,
