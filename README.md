@@ -1,3 +1,6 @@
+
+:))) <3 
+
 # 📍 **VS CODE : no terminal**
 
 - Entrar na pasta da tarefa da sala = cd para-a-sala
