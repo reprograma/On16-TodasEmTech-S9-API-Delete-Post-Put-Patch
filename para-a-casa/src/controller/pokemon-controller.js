@@ -16,7 +16,6 @@ const pokedex = (request, response) => {
 
 const updatePokemon = (request, response) => {
   const idRequest = request.params.id;
-
   const pokemonRequest = request.body;
 
   const foundIndex = pokemonJson.findIndex(
@@ -37,11 +36,9 @@ const updatePokemon = (request, response) => {
 
 const updateStats = (request, response) => {
   const idRequest = request.params.id;
-
   const newStats = request.body.stats;
 
-  filteredPokemon = pokemonJson.find((pokemon) => pokemon.id == idRequest);
-
+  const filteredPokemon = pokemonJson.find((pokemon) => pokemon.id == idRequest);
   filteredPokemon.stats = newStats;
 
   response.status(200).json([
@@ -81,7 +78,7 @@ const deletePokemonType = (request, response) => {
     pokemon.type.includes(typeRequest)
   );
 
-  for (i = 0; i < filteredPokemon.length; i++) {
+  for (let i = 0; i < filteredPokemon.length; i++) {
     const index = pokemonJson.indexOf(filteredPokemon[i]); //compara elementos de pesquisa com elementos do array
 
     pokemonJson.splice(index, 1);
