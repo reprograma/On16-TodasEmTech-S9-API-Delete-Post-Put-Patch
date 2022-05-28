@@ -1,4 +1,4 @@
-const pokedexJson = require('../../models/pokedex.json')
+const pokedexJson = require('../models/pokedex.json')
 const express = require("express")
 const app = express()
 
