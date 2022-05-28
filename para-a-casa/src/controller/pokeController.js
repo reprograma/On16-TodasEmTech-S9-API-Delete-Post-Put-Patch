@@ -51,28 +51,6 @@ const deletePokemon = (request, response) => {
     }])
 }
 
-// const deletePokemonType = (request, response) => {
-
-//     const typeRequest = request.query.type 
-
-//     const typeFilter = pokeJson.filter(pokemon => pokemon.type.includes(typeRequest))
-
-//     for (index = 0; index < typeFilter.lenght; index++) {
-
-//         const indexPokemon = pokeJson.indexOf(typeFilter[index])
-//         pokeJson.splice(indexPokemon, 1)
-
-//     }
-
-//     response.status(200).json([
-//         {
-//             "mensagem" : "Pokemon deletado com sucesso",
-//             "deletado" : typeRequest,
-//             pokeJson
-//         }
-//     ])
-// }
-
 const deletePokemonType = (request, response) => {
 
     const typeRequest = request.query.type
@@ -93,13 +71,6 @@ const deletePokemonType = (request, response) => {
         }
     ])
 }
-
-
-
-
-
-
-
 
 module.exports = {
     updateAll,

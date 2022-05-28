@@ -8,8 +8,8 @@ const router = express.Router()
 //rotas
 router.put('/update/:id', controller.updateAll)
 router.patch('/stats/:id', controller.updateStats)
+router.delete('/delete/type', controller.deletePokemonType)
 router.delete('/delete/:id', controller.deletePokemon)
-router.delete('/deletes/type', controller.deletePokemonType)
 
 
 
