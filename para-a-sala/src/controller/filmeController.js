@@ -79,6 +79,7 @@ const deleteFilme = (request, response) => {
 
 const deleteFilemePortitulo = (request, response) => {
 
+<<<<<<< HEAD
     //id que quero deletar
     const tituloRequest = request.params.title.toLoweCasa();
 
@@ -96,6 +97,28 @@ const deleteFilemePortitulo = (request, response) => {
         filmesJson
     }])
 }
+=======
+    const deleteFilmePorTitulo = (request, response)=>{
+        //id que quero deletar
+        const idRequest = request.params.title.toLowerCase()
+    
+        //pegando o indice(index) da tarefa q vai ser deletada
+        const indiceFilme = filmesJson.findIndex(filme => filme.title.toLowerCase() == idRequest)
+    
+        //retira a tarefa da array de tarefas a partir do seu indice
+        //ARRAY.SPLICE(INDICE, NUMERO DE ITENS DELETADOS, ITEM A SER ADICIONADO)
+        //quando splice a gente so coloca o indice e 1, estamo retirando somente o tem
+        filmesJson.splice(indiceFilme, 1)
+    
+        response.status(200).json([
+            {
+                "message": "filme deletado com sucesso",
+                "deletada": idRequest,
+                filmesJson
+            }
+        ])
+    }
+>>>>>>> 9bab97180b314b6790bfeb95a55a51e6524a59c7
 
 
 const idRequest = request.query.
