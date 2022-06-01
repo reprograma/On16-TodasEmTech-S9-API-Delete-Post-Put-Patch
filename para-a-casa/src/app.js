@@ -1,6 +1,6 @@
 const express = require('express') 
 
-const filmesRoutes = require("./routes/filmeRoutes")
+const filmesRoutes = require("./routes/filmesRoutes")
 
 const app = express() 
 
