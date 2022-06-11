@@ -4,7 +4,8 @@
 const controller = require('../controller/filmeController')
 
 const express = require('express') // chamando express
-const { Router } = require('express')
+
+
 
 // funcao de rotas do express
 const router = express.Router()
@@ -19,4 +20,8 @@ router.delete("/delete/title/:title", controller.deleteFilmePorTitulo)
 
 //exportando para ser usado no app.js
 module.exports = router
+
+/* quando cria o module.exports CRIA AUTOMATICAMENTE esta linha de código com estas chaves, tem que apagar toda a linha
+const { Router } = require('express')
+*/
 
