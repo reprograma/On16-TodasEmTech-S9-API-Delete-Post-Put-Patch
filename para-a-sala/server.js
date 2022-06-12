@@ -1,4 +1,4 @@
-const app = require("./src/app") //chamando o arquivo app que esta no src - routes
+const app = require("./src/app") 
 
 const PORT = 1313 //PORTA que vai usar declarar em letra maiuscula
 

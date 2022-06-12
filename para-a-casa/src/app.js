@@ -1,11 +1,12 @@
 const express = require("express") 
-const filmesRoutes = require("./routes/filmeRoutes")
-const app = express() // guarda a const express
+const app = express() //guardei a constante express
 
-app.use(express.json()) // bodyparser
+const filmesRoutes = require("./routes/glibliRoutes")
 
+app.use(express.json()) // body parser
+
+// minha rota raiz do api
 app.use("/filmes", filmesRoutes)
-// rota raiz
 
-// exportando para usar o server.js
+// forma como irei exportar este arquivo para usar o server.js
 module.exports = app
