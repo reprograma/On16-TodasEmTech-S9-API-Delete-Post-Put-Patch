@@ -1,10 +1,11 @@
-/// acessando endereço do banco/json
+/// acessando endereço do bancodedados json que e filmes-barbie.json obs o caminho
 const filmesJson = require('../models/filmes-barbie.json')
 const express = require('express')
 const app = express() //executar o express
 
 app.use(express.json()) // fazendo o body parser
 
+// Endpointer retornara todos os filmes
 const getAll = (request, response) => {
 
     response.status(200).json([
@@ -14,7 +15,7 @@ const getAll = (request, response) => {
     ])
 
 }
-
+// fazer uma alteração
 // declaro minha constante de atualizar o titulo do filme 
 const updateTitle = (request, response) => {
 
